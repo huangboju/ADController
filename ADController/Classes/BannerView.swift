@@ -4,8 +4,6 @@
 
 //!!!: automaticallyAdjustsScrollViewInsets = false 在一个只有这个视图的Controller中加上这句
 
-import UIKit
-
 class BannerView: UIView {
     typealias selectedData = (Int) -> Void
     var pageStepTime = 5 ///自动滚动时间间隔

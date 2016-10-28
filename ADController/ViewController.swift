@@ -13,13 +13,13 @@ class ViewController: UIViewController {
         return tableView
     }()
 
-    lazy var data = [
-        TransitionType.bottomToTop,
-        TransitionType.topToBottom,
-        TransitionType.leftToRight,
-        TransitionType.rightToLeft,
-        TransitionType.overlayVertical,
-        TransitionType.overlayHorizontal
+    lazy var data: [TransitionType] = [
+        .bottomToTop,
+        .topToBottom,
+        .leftToRight,
+        .rightToLeft,
+        .overlayVertical,
+        .overlayHorizontal
     ]
 
     override func viewDidLoad() {

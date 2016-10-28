@@ -2,9 +2,7 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-import UIKit
-
-class OverlayPresentationController: UIPresentationController {
+class PresentationController: UIPresentationController {
     private lazy var dimmingView: UIView = {
         let dimmingView = UIView()
         dimmingView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)

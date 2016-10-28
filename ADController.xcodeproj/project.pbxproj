@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D811A34B1DC31D3C009FAC2A /* BouncePresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811A34A1DC31D3C009FAC2A /* BouncePresentAnimation.swift */; };
+		D811A34E1DC32256009FAC2A /* NormalDismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811A34D1DC32256009FAC2A /* NormalDismissAnimation.swift */; };
+		D811A3501DC323B8009FAC2A /* SwipeUpInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811A34F1DC323B8009FAC2A /* SwipeUpInteractiveTransition.swift */; };
 		D8B96EAB1D61547E00246F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B96EAA1D61547E00246F6D /* AppDelegate.swift */; };
 		D8B96EAD1D61547E00246F6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B96EAC1D61547E00246F6D /* ViewController.swift */; };
 		D8B96EB01D61547E00246F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B96EAE1D61547E00246F6D /* Main.storyboard */; };
@@ -16,7 +19,7 @@
 		D8B96ECB1D61547E00246F6D /* ADControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B96ECA1D61547E00246F6D /* ADControllerUITests.swift */; };
 		D8FF10881DB7725400759233 /* ADController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10841DB7725400759233 /* ADController.swift */; };
 		D8FF10891DB7725400759233 /* OverlayAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10851DB7725400759233 /* OverlayAnimationController.swift */; };
-		D8FF108A1DB7725400759233 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10861DB7725400759233 /* OverlayPresentationController.swift */; };
+		D8FF108A1DB7725400759233 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10861DB7725400759233 /* PresentationController.swift */; };
 		D8FF108B1DB7725400759233 /* SDEModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10871DB7725400759233 /* SDEModalTransitionDelegate.swift */; };
 		D8FF108D1DB7A21500759233 /* SliderAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF108C1DB7A21500759233 /* SliderAnimationController.swift */; };
 		D8FF108F1DB7B31900759233 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF108E1DB7B31900759233 /* AnimatedTransitioning.swift */; };
@@ -51,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D811A34A1DC31D3C009FAC2A /* BouncePresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncePresentAnimation.swift; sourceTree = "<group>"; };
+		D811A34C1DC31D6F009FAC2A /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		D811A34D1DC32256009FAC2A /* NormalDismissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalDismissAnimation.swift; sourceTree = "<group>"; };
+		D811A34F1DC323B8009FAC2A /* SwipeUpInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeUpInteractiveTransition.swift; sourceTree = "<group>"; };
 		D8B96EA71D61547E00246F6D /* ADController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B96EAA1D61547E00246F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B96EAC1D61547E00246F6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +73,7 @@
 		D8B96ECC1D61547E00246F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FF10841DB7725400759233 /* ADController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADController.swift; sourceTree = "<group>"; };
 		D8FF10851DB7725400759233 /* OverlayAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayAnimationController.swift; sourceTree = "<group>"; };
-		D8FF10861DB7725400759233 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
+		D8FF10861DB7725400759233 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		D8FF10871DB7725400759233 /* SDEModalTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDEModalTransitionDelegate.swift; sourceTree = "<group>"; };
 		D8FF108C1DB7A21500759233 /* SliderAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderAnimationController.swift; sourceTree = "<group>"; };
 		D8FF108E1DB7B31900759233 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
@@ -168,10 +175,14 @@
 				D8FF10841DB7725400759233 /* ADController.swift */,
 				D8FF10951DB89DC800759233 /* BannerView.swift */,
 				D8FF10851DB7725400759233 /* OverlayAnimationController.swift */,
-				D8FF10861DB7725400759233 /* OverlayPresentationController.swift */,
+				D8FF10861DB7725400759233 /* PresentationController.swift */,
 				D8FF10871DB7725400759233 /* SDEModalTransitionDelegate.swift */,
 				D8FF108C1DB7A21500759233 /* SliderAnimationController.swift */,
 				D8FF108E1DB7B31900759233 /* AnimatedTransitioning.swift */,
+				D811A34A1DC31D3C009FAC2A /* BouncePresentAnimation.swift */,
+				D811A34C1DC31D6F009FAC2A /* Bridging.h */,
+				D811A34D1DC32256009FAC2A /* NormalDismissAnimation.swift */,
+				D811A34F1DC323B8009FAC2A /* SwipeUpInteractiveTransition.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -344,11 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D811A34E1DC32256009FAC2A /* NormalDismissAnimation.swift in Sources */,
 				D8B96EAD1D61547E00246F6D /* ViewController.swift in Sources */,
 				D8B96EAB1D61547E00246F6D /* AppDelegate.swift in Sources */,
+				D811A3501DC323B8009FAC2A /* SwipeUpInteractiveTransition.swift in Sources */,
+				D811A34B1DC31D3C009FAC2A /* BouncePresentAnimation.swift in Sources */,
 				D8FF10961DB89DC800759233 /* BannerView.swift in Sources */,
 				D8FF108F1DB7B31900759233 /* AnimatedTransitioning.swift in Sources */,
-				D8FF108A1DB7725400759233 /* OverlayPresentationController.swift in Sources */,
+				D8FF108A1DB7725400759233 /* PresentationController.swift in Sources */,
 				D8FF10891DB7725400759233 /* OverlayAnimationController.swift in Sources */,
 				D8FF108D1DB7A21500759233 /* SliderAnimationController.swift in Sources */,
 				D8FF108B1DB7725400759233 /* SDEModalTransitionDelegate.swift in Sources */,
@@ -504,6 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ADController.ADController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ADController/Classes/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -517,6 +532,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ADController.ADController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ADController/Classes/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

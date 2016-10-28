@@ -6,8 +6,6 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-import UIKit
-
 class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         

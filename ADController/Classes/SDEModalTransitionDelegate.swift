@@ -2,8 +2,6 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-import UIKit
-
 class SDEModalTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
 
     var animatedTransitioning: UIViewControllerAnimatedTransitioning {
@@ -24,6 +22,6 @@ class SDEModalTransitionDelegate: NSObject, UIViewControllerTransitioningDelegat
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return OverlayPresentationController(presentedViewController: presented, presenting: presenting)
+        return PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
