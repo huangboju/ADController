@@ -14,6 +14,9 @@
 		D8B96EB51D61547E00246F6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B96EB31D61547E00246F6D /* LaunchScreen.storyboard */; };
 		D8B96EC01D61547E00246F6D /* ADControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B96EBF1D61547E00246F6D /* ADControllerTests.swift */; };
 		D8B96ECB1D61547E00246F6D /* ADControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B96ECA1D61547E00246F6D /* ADControllerUITests.swift */; };
+		D8CE53A61DC7361F0080AAFF /* ADControllerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D8CE53A41DC7361F0080AAFF /* ADControllerFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8CE53A91DC7361F0080AAFF /* ADControllerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CE53A21DC7361F0080AAFF /* ADControllerFramework.framework */; };
+		D8CE53AA1DC7361F0080AAFF /* ADControllerFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8CE53A21DC7361F0080AAFF /* ADControllerFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8FF10881DB7725400759233 /* ADController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10841DB7725400759233 /* ADController.swift */; };
 		D8FF10891DB7725400759233 /* OverlayAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10851DB7725400759233 /* OverlayAnimationController.swift */; };
 		D8FF108A1DB7725400759233 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF10861DB7725400759233 /* PresentationController.swift */; };
@@ -48,7 +51,28 @@
 			remoteGlobalIDString = D8B96EA61D61547E00246F6D;
 			remoteInfo = ADController;
 		};
+		D8CE53A71DC7361F0080AAFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8B96E9F1D61547E00246F6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8CE53A11DC7361F0080AAFF;
+			remoteInfo = ADControllerFramework;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8CE53AE1DC7361F0080AAFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D8CE53AA1DC7361F0080AAFF /* ADControllerFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D811A34C1DC31D6F009FAC2A /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
@@ -65,6 +89,9 @@
 		D8B96EC61D61547E00246F6D /* ADControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B96ECA1D61547E00246F6D /* ADControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADControllerUITests.swift; sourceTree = "<group>"; };
 		D8B96ECC1D61547E00246F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8CE53A21DC7361F0080AAFF /* ADControllerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ADControllerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CE53A41DC7361F0080AAFF /* ADControllerFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADControllerFramework.h; sourceTree = "<group>"; };
+		D8CE53A51DC7361F0080AAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FF10841DB7725400759233 /* ADController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADController.swift; sourceTree = "<group>"; };
 		D8FF10851DB7725400759233 /* OverlayAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayAnimationController.swift; sourceTree = "<group>"; };
 		D8FF10861DB7725400759233 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
@@ -89,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CE53A91DC7361F0080AAFF /* ADControllerFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +134,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8CE539E1DC7361F0080AAFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +150,7 @@
 				D8B96EA91D61547E00246F6D /* ADController */,
 				D8B96EBE1D61547E00246F6D /* ADControllerTests */,
 				D8B96EC91D61547E00246F6D /* ADControllerUITests */,
+				D8CE53A31DC7361F0080AAFF /* ADControllerFramework */,
 				D8B96EA81D61547E00246F6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +161,7 @@
 				D8B96EA71D61547E00246F6D /* ADController.app */,
 				D8B96EBB1D61547E00246F6D /* ADControllerTests.xctest */,
 				D8B96EC61D61547E00246F6D /* ADControllerUITests.xctest */,
+				D8CE53A21DC7361F0080AAFF /* ADControllerFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +197,15 @@
 				D8B96ECC1D61547E00246F6D /* Info.plist */,
 			);
 			path = ADControllerUITests;
+			sourceTree = "<group>";
+		};
+		D8CE53A31DC7361F0080AAFF /* ADControllerFramework */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE53A41DC7361F0080AAFF /* ADControllerFramework.h */,
+				D8CE53A51DC7361F0080AAFF /* Info.plist */,
+			);
+			path = ADControllerFramework;
 			sourceTree = "<group>";
 		};
 		D8FF10831DB7721A00759233 /* Classes */ = {
@@ -204,6 +250,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D8CE539F1DC7361F0080AAFF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8CE53A61DC7361F0080AAFF /* ADControllerFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		D8B96EA61D61547E00246F6D /* ADController */ = {
 			isa = PBXNativeTarget;
@@ -212,10 +269,12 @@
 				D8B96EA31D61547E00246F6D /* Sources */,
 				D8B96EA41D61547E00246F6D /* Frameworks */,
 				D8B96EA51D61547E00246F6D /* Resources */,
+				D8CE53AE1DC7361F0080AAFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D8CE53A81DC7361F0080AAFF /* PBXTargetDependency */,
 			);
 			name = ADController;
 			productName = ADController;
@@ -258,6 +317,24 @@
 			productReference = D8B96EC61D61547E00246F6D /* ADControllerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D8CE53A11DC7361F0080AAFF /* ADControllerFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8CE53AD1DC7361F0080AAFF /* Build configuration list for PBXNativeTarget "ADControllerFramework" */;
+			buildPhases = (
+				D8CE539D1DC7361F0080AAFF /* Sources */,
+				D8CE539E1DC7361F0080AAFF /* Frameworks */,
+				D8CE539F1DC7361F0080AAFF /* Headers */,
+				D8CE53A01DC7361F0080AAFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ADControllerFramework;
+			productName = ADControllerFramework;
+			productReference = D8CE53A21DC7361F0080AAFF /* ADControllerFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -282,6 +359,10 @@
 						LastSwiftMigration = 0800;
 						TestTargetID = D8B96EA61D61547E00246F6D;
 					};
+					D8CE53A11DC7361F0080AAFF = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = D8B96EA21D61547E00246F6D /* Build configuration list for PBXProject "ADController" */;
@@ -300,6 +381,7 @@
 				D8B96EA61D61547E00246F6D /* ADController */,
 				D8B96EBA1D61547E00246F6D /* ADControllerTests */,
 				D8B96EC51D61547E00246F6D /* ADControllerUITests */,
+				D8CE53A11DC7361F0080AAFF /* ADControllerFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -333,6 +415,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D8B96EC41D61547E00246F6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CE53A01DC7361F0080AAFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,6 +463,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8CE539D1DC7361F0080AAFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -386,6 +482,11 @@
 			isa = PBXTargetDependency;
 			target = D8B96EA61D61547E00246F6D /* ADController */;
 			targetProxy = D8B96EC71D61547E00246F6D /* PBXContainerItemProxy */;
+		};
+		D8CE53A81DC7361F0080AAFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8CE53A11DC7361F0080AAFF /* ADControllerFramework */;
+			targetProxy = D8CE53A71DC7361F0080AAFF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -575,6 +676,59 @@
 			};
 			name = Release;
 		};
+		D8CE53AB1DC7361F0080AAFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ADControllerFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ADControllerFramework.ADControllerFramework;
+				PRODUCT_MODULE_NAME = ADControllerFramework;
+				PRODUCT_NAME = ADControllerFramework;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D8CE53AC1DC7361F0080AAFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ADControllerFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ADControllerFramework.ADControllerFramework;
+				PRODUCT_MODULE_NAME = ADControllerFramework;
+				PRODUCT_NAME = ADControllerFramework;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -613,6 +767,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D8CE53AD1DC7361F0080AAFF /* Build configuration list for PBXNativeTarget "ADControllerFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8CE53AB1DC7361F0080AAFF /* Debug */,
+				D8CE53AC1DC7361F0080AAFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
