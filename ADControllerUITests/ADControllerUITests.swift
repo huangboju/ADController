@@ -2,8 +2,8 @@
 //  ADControllerUITests.swift
 //  ADControllerUITests
 //
-//  Created by 伯驹 黄 on 16/8/15.
-//  Copyright © 2016年 xiAo_Ju. All rights reserved.
+//  Created by 伯驹 黄 on 2016/11/9.
+//  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
 import XCTest
