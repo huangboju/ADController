@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ADController
+//  ADControllerDemo
 //
 //  Created by 伯驹 黄 on 2016/11/9.
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
