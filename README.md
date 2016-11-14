@@ -1,7 +1,8 @@
 # ADController
 炫酷的广告弹框，总有一款适合你!
 
-###用法
+## Usage
+
 ```swift
 let controller = ADController(type: TransitionType.bottomToTop)
         let flag = controller.isCanShowing(date: adDate!)
@@ -13,6 +14,15 @@ let controller = ADController(type: TransitionType.bottomToTop)
             present(controller, animated: true) {}
         }
 ```
+
+## Installation
+
+### CocoaPods
+`pod 'ADController'`
+
+### Carthage
+`github "huangboju/ADController"`
+
 
 ###效果1
 ![Alt text](https://github.com/huangboju/ADController/blob/master/ADController/Resources/bottomToTop.gif)
