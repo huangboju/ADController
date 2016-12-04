@@ -32,6 +32,7 @@ public class ADController: UIViewController {
         }
     }
     public var isShowPageControl = false
+    public var isAllowLooping = false
     public var closeButtonImage: UIImage? {
         willSet {
             ADConfig.shared.closeButtonImage = newValue
@@ -87,6 +88,7 @@ public class ADController: UIViewController {
             strongSelf.selectedHandel?($0, strongSelf)
         }
         bannerView.showPageControl = isShowPageControl
+        bannerView.isAllowLooping = isAllowLooping
         view.addSubview(bannerView)
         if closeButtonImage == nil {
             ADConfig.shared.closeButtonImage = bundleImage
