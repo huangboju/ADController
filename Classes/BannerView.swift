@@ -2,11 +2,11 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-//!!!: automaticallyAdjustsScrollViewInsets = false 在一个只有这个视图的Controller中加上这句
+//! !!: automaticallyAdjustsScrollViewInsets = false 在一个只有这个视图的Controller中加上这句
 
 class BannerView: UIView {
     typealias selectedData = (Int) -> Void
-    var pageStepTime = 5 ///自动滚动时间间隔
+    var pageStepTime = 5 /// 自动滚动时间间隔
     var bgColor: UIColor?
     var imageContentMode =  UIViewContentMode.scaleAspectFill
     var isAllowLooping = false {
@@ -55,7 +55,7 @@ class BannerView: UIView {
                 isFirstUse(datas: urlStrs)
             }
         }
-    } ///图片链接
+    } /// 图片链接
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,7 +77,7 @@ class BannerView: UIView {
         addSubview(collectionView!)
         addSubview(pageControl)
     }
-    
+
     // 修复宽度为小数是的bug（屏幕最小单位为像素）
     func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
         let totalSpace = (colCount - 1) * space
@@ -103,7 +103,7 @@ class BannerView: UIView {
             timer?.resume()
         }
     }
-    
+
     fileprivate func deinitTimer() {
         if let time = self.timer {
             time.cancel()
@@ -125,7 +125,7 @@ class BannerView: UIView {
     func set(urls: [String]) {
         assert(images.isEmpty, "不要同时设置图片链接和图片")
         if urls.isEmpty { return }
-        
+
         urlStrs = isAllowLooping ? ([urls[urls.count - 1]] + urls + [urls[0]]) : urls
         isUsingImage = false
         count = urlStrs.count
@@ -135,12 +135,12 @@ class BannerView: UIView {
     func set(images: [UIImage]) {
         assert(urlStrs.isEmpty, "不要同时设置图片链接和图片")
         if images.isEmpty { return }
-        
+
         self.images = isAllowLooping ? ([images[images.count - 1]] + images + [images[0]]) : images
         count = self.images.count
         pageControl.numberOfPages = images.count
     }
-    
+
     deinit {
         deinitTimer()
     }
@@ -154,7 +154,7 @@ extension BannerView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return isUsingImage ? images.count : urlStrs.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         if let color = bgColor {
@@ -167,7 +167,7 @@ extension BannerView: UICollectionViewDataSource {
 }
 
 extension BannerView: UICollectionViewDelegate {
-    //MARK: - UICollectionViewDelegate
+    // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let bannerCell = (cell as? BannerCell)
         bannerCell?.imageContentMode = imageContentMode
@@ -239,7 +239,7 @@ class BannerCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.addSubview(imageView)
     }
-    
+
     var imageContentMode: UIViewContentMode? {
         didSet {
             if let imageContentMode = imageContentMode {
@@ -248,7 +248,7 @@ class BannerCell: UICollectionViewCell {
             }
         }
     }
-    
+
     var image: UIImage? {
         didSet {
             imageView.image = image

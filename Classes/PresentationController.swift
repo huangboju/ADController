@@ -10,7 +10,7 @@ class PresentationController: UIPresentationController {
         dimmingView.bounds = CGRect(origin: .zero, size: ADConfig.shared.ADViewSize)
         return dimmingView
     }()
-    
+
     private lazy var dismissButton: UIButton = {
         let x = (Constants.screenWidth + ADConfig.shared.ADViewSize.width) / 2
         let y = (Constants.screenHeight - ADConfig.shared.ADViewSize.height) / 2
@@ -38,18 +38,18 @@ class PresentationController: UIPresentationController {
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: {
             _ in
             self.dimmingView.bounds = self.containerView!.bounds
-            }, completion: nil)
+        }, completion: nil)
     }
 
     override func dismissalTransitionWillBegin() {
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
             self.dimmingView.alpha = 0.0
-            }, completion: nil)
+        }, completion: nil)
         dismissAction()
     }
-    
+
     func dismissAction() {
-        
+
         if let controller = presentedViewController as? ADController {
             if ["overlayVertical", "overlayHorizontal"].contains(ADConfig.shared.transitionType.rawValue) {
                 ADConfig.shared.lastImage = getSnap(targetView: controller.view).image
@@ -63,9 +63,9 @@ class PresentationController: UIPresentationController {
         applyTransform = applyTransform.scaledBy(x: 0.1, y: 0.1)
         UIView.animate(withDuration: 0.4, animations: {
             self.dismissButton.transform = applyTransform
-            }, completion: { _ in
-                self.dismissButton.removeFromSuperview()
-                self.presentedViewController.dismiss(animated: true, completion: nil)
+        }, completion: { _ in
+            self.dismissButton.removeFromSuperview()
+            self.presentedViewController.dismiss(animated: true, completion: nil)
         })
     }
 
@@ -77,13 +77,13 @@ class PresentationController: UIPresentationController {
         return UIImageView(image: image)
     }
 
-    override func containerViewWillLayoutSubviews(){
+    override func containerViewWillLayoutSubviews() {
         dimmingView.center = containerView!.center
         dimmingView.bounds = containerView!.bounds
 
         presentedView?.center = containerView!.center
         // 显示部分的大小
-        
+
         presentedView?.bounds = CGRect(origin: .zero, size: ADConfig.shared.ADViewSize)
     }
 }

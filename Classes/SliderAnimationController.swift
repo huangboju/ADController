@@ -11,7 +11,7 @@ class SliderAnimationController: AnimatedTransitioning {
     private var translationH: CGFloat = 0
     private var translationW: CGFloat = 0
     private var isBeingPresented = false
-    
+
     override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = transitionContext.viewController(forKey: .from) else { return }
         guard let toVC = transitionContext.viewController(forKey: .to) else { return }
@@ -21,7 +21,7 @@ class SliderAnimationController: AnimatedTransitioning {
         guard let fromView = fromVC.view else { return }
         guard let toView = toVC.view else { return }
 
-        translationH =  containerView.frame.height
+        translationH = containerView.frame.height
         translationW = containerView.frame.width
 
         isBeingPresented = toVC.isBeingPresented
@@ -33,11 +33,11 @@ class SliderAnimationController: AnimatedTransitioning {
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             fromView.transform = self.transform(forKey: .from)
             toView.transform = .identity
-            }, completion: { finished in
-                fromView.transform = .identity
-                toView.transform = .identity
-                let isCancelled = transitionContext.transitionWasCancelled
-                transitionContext.completeTransition(!isCancelled)
+        }, completion: { finished in
+            fromView.transform = .identity
+            toView.transform = .identity
+            let isCancelled = transitionContext.transitionWasCancelled
+            transitionContext.completeTransition(!isCancelled)
         })
     }
 
@@ -65,7 +65,7 @@ class SliderAnimationController: AnimatedTransitioning {
         }
         return CGAffineTransform(translationX: x, y: y)
     }
-    
+
     func creatTransform(x: CGFloat) -> (CGFloat) -> CGAffineTransform {
         return { CGAffineTransform(translationX: x, y: $0) }
     }

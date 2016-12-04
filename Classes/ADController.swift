@@ -62,11 +62,11 @@ public class ADController: UIViewController {
         bannerView.alpha = ADConfig.shared.isOverlay ? 0 : 1
         return bannerView
     }()
-    
+
     private var showedDate: String {
         return "\(classForCoder)showed_date"
     }
-    
+
     private var adDateKey: String {
         return "\(classForCoder)AD_date"
     }
@@ -81,7 +81,7 @@ public class ADController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        
+
         bannerView.isAllowLooping = isAllowLooping
         bannerView.set(images: images)
         bannerView.handleBack = { [weak self] in
@@ -89,7 +89,7 @@ public class ADController: UIViewController {
             strongSelf.selectedHandel?($0, strongSelf)
         }
         bannerView.showPageControl = isShowPageControl
-        
+
         view.addSubview(bannerView)
         if closeButtonImage == nil {
             ADConfig.shared.closeButtonImage = bundleImage
@@ -134,15 +134,15 @@ struct Constants {
     static let showedDateKey = "ADController_showed_date"
     static let screenWidth = UIScreen.main.bounds.width
     static let screenHeight = UIScreen.main.bounds.height
-    
+
     static var oldDate: Date {
         return (UserDefaults.standard.value(forKey: showedDateKey) as? Date) ?? Date()
     }
-    
+
     static var adDate: Date? {
-       return UserDefaults.standard.value(forKey: adDateKey) as? Date
+        return UserDefaults.standard.value(forKey: adDateKey) as? Date
     }
-    
+
     static func set(_ date: Date) {
         UserDefaults.standard.set(date, forKey: adDateKey)
     }
