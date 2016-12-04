@@ -32,6 +32,7 @@ class BannerView: UIView {
     fileprivate let cellIdentifier = "scrollUpCell"
 
     private var timer: DispatchSourceTimer?
+    fileprivate var count = 0
     fileprivate var isUsingImage = true
     fileprivate var backClosure: selectedData?
     fileprivate lazy var pageControl: UIPageControl = {
@@ -44,20 +45,14 @@ class BannerView: UIView {
     fileprivate var images: [UIImage] = [] {
         didSet {
             if oldValue != images {
-                collectionView?.reloadData()
-                if isAllowLooping {
-                    isUsingImage ? isFirstUse(datas: images) : isFirstUse(datas: urlStrs)
-                }
+                isFirstUse(datas: images)
             }
         }
     }
     fileprivate var urlStrs: [String] = [] {
         didSet {
             if oldValue != urlStrs {
-                collectionView?.reloadData()
-                if isAllowLooping {
-                    isUsingImage ? isFirstUse(datas: images) : isFirstUse(datas: urlStrs)
-                }
+                isFirstUse(datas: urlStrs)
             }
         }
     } ///图片链接
@@ -131,8 +126,9 @@ class BannerView: UIView {
         assert(images.isEmpty, "不要同时设置图片链接和图片")
         if urls.isEmpty { return }
         
-        urlStrs = isAllowLooping ? [urls[urls.count - 1]] + urls + [urls[0]] : urls
+        urlStrs = isAllowLooping ? ([urls[urls.count - 1]] + urls + [urls[0]]) : urls
         isUsingImage = false
+        count = urlStrs.count
         pageControl.numberOfPages = urls.count
     }
 
@@ -140,8 +136,8 @@ class BannerView: UIView {
         assert(urlStrs.isEmpty, "不要同时设置图片链接和图片")
         if images.isEmpty { return }
         
-        self.images = isAllowLooping ? [images[images.count - 1]] + images + [images[0]] : images
-
+        self.images = isAllowLooping ? ([images[images.count - 1]] + images + [images[0]]) : images
+        count = self.images.count
         pageControl.numberOfPages = images.count
     }
     
@@ -183,7 +179,9 @@ extension BannerView: UICollectionViewDelegate {
     }
 
     func isFirstUse<T>(datas: [T]) {
-        if datas.count > 1 {
+        collectionView?.reloadData()
+
+        if isAllowLooping {
             collectionView?.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: false)
         }
     }
@@ -203,7 +201,7 @@ extension BannerView: UICollectionViewDelegate {
         let page = scrollView.contentOffset.x / scrollView.frame.width
 
         let currentPage = {
-            let value = page.truncatingRemainder(dividingBy: 1) < 0.2
+            let value = page.truncatingRemainder(dividingBy: 1) < 0.3
             if value { // cell过半才改变pageControl
                 self.pageControl.currentPage = Int(page) - (self.isAllowLooping ? 1 : 0)
             }
@@ -214,8 +212,8 @@ extension BannerView: UICollectionViewDelegate {
 
         if page <= 0.0 {
             // 向右拉
-            collectionView?.scrollToItem(at: IndexPath(item: images.count - 2, section: 0), at: .centeredHorizontally, animated: false)
-            pageControl.currentPage = images.count - 3
+            collectionView?.scrollToItem(at: IndexPath(item: count - 2, section: 0), at: .centeredHorizontally, animated: false)
+            pageControl.currentPage = count - 3
         } else if page >= CGFloat(images.count - 1) {
             // 向左
             pageControl.currentPage = 0

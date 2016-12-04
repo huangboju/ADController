@@ -81,14 +81,15 @@ public class ADController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        bannerView.set(images: images)
         
+        bannerView.isAllowLooping = isAllowLooping
+        bannerView.set(images: images)
         bannerView.handleBack = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.selectedHandel?($0, strongSelf)
         }
         bannerView.showPageControl = isShowPageControl
-        bannerView.isAllowLooping = isAllowLooping
+        
         view.addSubview(bannerView)
         if closeButtonImage == nil {
             ADConfig.shared.closeButtonImage = bundleImage

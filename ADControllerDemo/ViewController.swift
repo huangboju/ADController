@@ -62,6 +62,7 @@ extension ViewController: UITableViewDelegate {
         let flag = controller.isCanShowing(date: adDate!)
         controller.images = (0...9).flatMap { UIImage(named: "IMG_\($0).PNG") }
         controller.isShowPageControl = true
+        controller.isAllowLooping = true
         controller.selectedHandel = { (idx, controller) in
             print(idx)
             controller.dismiss(animated: true, completion: nil)
