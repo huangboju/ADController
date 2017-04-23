@@ -24,7 +24,7 @@ let controller = ADController(type: TransitionType.bottomToTop)
 `github "huangboju/ADController"`
 
 
-###效果1
+### 效果1
 ![Alt text](https://github.com/huangboju/ADController/blob/master/ADControllerDemo/Resources/bottomToTop.gif)
-###效果2
+### 效果2
 ![Alt text](https://github.com/huangboju/ADController/blob/master/ADControllerDemo/Resources/overlayHorizontal.gif)
