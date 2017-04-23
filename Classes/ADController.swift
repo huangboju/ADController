@@ -3,12 +3,12 @@
 //
 
 public enum TransitionType: String {
-    case overlayVertical = "overlayVertical"
-    case overlayHorizontal = "overlayHorizontal"
-    case bottomToTop = "bottomToTop"
-    case topToBottom = "topToBottom"
-    case leftToRight = "leftToRight"
-    case rightToLeft = "rightToLeft"
+    case overlayVertical
+    case overlayHorizontal
+    case bottomToTop
+    case topToBottom
+    case leftToRight
+    case rightToLeft
 }
 
 public enum CloseButtonPosition: String {
@@ -23,6 +23,7 @@ public class ADController: UIViewController {
             ADConfig.shared.ADViewSize = newValue
         }
     }
+
     public var showTimeInterval = ShowTimeInterval.day
     public var selectedHandel: ((Int, UIViewController) -> Void)?
     public var closedHandel: (() -> Void)?
@@ -31,6 +32,7 @@ public class ADController: UIViewController {
             ADConfig.shared.closeButtonPosition = newValue
         }
     }
+
     public var isShowPageControl = false
     public var isAllowLooping = false
     public var closeButtonImage: UIImage? {
@@ -38,6 +40,7 @@ public class ADController: UIViewController {
             ADConfig.shared.closeButtonImage = newValue
         }
     }
+
     public var images = [UIImage]() {
         willSet {
             ADConfig.shared.firstImage = newValue[0]
@@ -78,7 +81,7 @@ public class ADController: UIViewController {
         modalPresentationStyle = .custom
     }
 
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
 
@@ -96,7 +99,7 @@ public class ADController: UIViewController {
         }
     }
 
-    override public func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Constants.setShowed(Date())
         UIView.animate(withDuration: 0.3, animations: {
@@ -117,7 +120,7 @@ public class ADController: UIViewController {
         return -oldDate.timeIntervalSinceNow >= showTimeInterval.rawValue
     }
 
-    override public func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("⚠️⚠️⚠️\(classForCoder)")
     }
@@ -160,6 +163,7 @@ class ADConfig {
             isOverlay = isVertical || newValue == .overlayHorizontal
         }
     }
+
     var closeButtonImage: UIImage?
     var firstImage = UIImage()
     var lastImage: UIImage?

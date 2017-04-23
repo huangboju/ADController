@@ -33,7 +33,7 @@ class SliderAnimationController: AnimatedTransitioning {
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             fromView.transform = self.transform(forKey: .from)
             toView.transform = .identity
-        }, completion: { finished in
+        }, completion: { _ in
             fromView.transform = .identity
             toView.transform = .identity
             let isCancelled = transitionContext.transitionWasCancelled

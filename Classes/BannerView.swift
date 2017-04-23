@@ -8,7 +8,7 @@ class BannerView: UIView {
     typealias selectedData = (Int) -> Void
     var pageStepTime = 5 /// 自动滚动时间间隔
     var bgColor: UIColor?
-    var imageContentMode =  UIViewContentMode.scaleAspectFill
+    var imageContentMode = UIViewContentMode.scaleAspectFill
     var isAllowLooping = false {
         willSet {
             if !newValue {
@@ -16,11 +16,13 @@ class BannerView: UIView {
             }
         }
     }
+
     var handleBack: selectedData? {
         didSet {
             backClosure = handleBack
         }
     }
+
     var showPageControl = true {
         willSet {
             if !newValue {
@@ -40,6 +42,7 @@ class BannerView: UIView {
         pageControl.pageIndicatorTintColor = UIColor(white: 0.7, alpha: 0.8)
         return pageControl
     }()
+
     fileprivate var collectionView: UICollectionView?
 
     fileprivate var images: [UIImage] = [] {
@@ -49,6 +52,7 @@ class BannerView: UIView {
             }
         }
     }
+
     fileprivate var urlStrs: [String] = [] {
         didSet {
             if oldValue != urlStrs {
@@ -61,7 +65,7 @@ class BannerView: UIView {
         super.init(frame: frame)
         let layout = UICollectionViewFlowLayout()
         backgroundColor = UIColor.white
-        layout.itemSize = CGSize(width: fixSlit(rect: &bounds, colCount: 1), height: bounds.height)
+        layout.itemSize = CGSize(width: layout.fixSlit(rect: &bounds, colCount: 1), height: bounds.height)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -76,21 +80,6 @@ class BannerView: UIView {
         collectionView?.showsHorizontalScrollIndicator = false
         addSubview(collectionView!)
         addSubview(pageControl)
-    }
-
-    // 修复宽度为小数是的bug（屏幕最小单位为像素）
-    func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
-        let totalSpace = (colCount - 1) * space
-        let itemWidth = (rect.width - totalSpace) / colCount
-        var realItemWidth = floor(itemWidth) + 0.5
-        if realItemWidth < itemWidth {
-            realItemWidth += 0.5
-        }
-        let realWidth = colCount * realItemWidth + totalSpace
-        let pointX = (realWidth - rect.width) / 2
-        rect.origin.x = -pointX
-        rect.size.width = realWidth
-        return (rect.width - totalSpace) / colCount
     }
 
     fileprivate func setTheTimer() {
@@ -145,13 +134,13 @@ class BannerView: UIView {
         deinitTimer()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension BannerView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return isUsingImage ? images.count : urlStrs.count
     }
 
@@ -168,7 +157,7 @@ extension BannerView: UICollectionViewDataSource {
 
 extension BannerView: UICollectionViewDelegate {
     // MARK: - UICollectionViewDelegate
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let bannerCell = (cell as? BannerCell)
         bannerCell?.imageContentMode = imageContentMode
         if isUsingImage {
@@ -178,7 +167,7 @@ extension BannerView: UICollectionViewDelegate {
         }
     }
 
-    func isFirstUse<T>(datas: [T]) {
+    func isFirstUse<T>(datas _: [T]) {
         collectionView?.reloadData()
 
         if isAllowLooping {
@@ -186,14 +175,14 @@ extension BannerView: UICollectionViewDelegate {
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let backClosure = self.backClosure {
             backClosure(isAllowLooping ? max(indexPath.row - 1, 0) : indexPath.row)
         }
     }
 
     // MARK: - UIScrollViewDelegate
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_: UIScrollView) {
         deinitTimer()
     }
 
@@ -223,7 +212,7 @@ extension BannerView: UICollectionViewDelegate {
         }
     }
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_: UIScrollView, willDecelerate _: Bool) {
         setTheTimer()
     }
 }
@@ -263,7 +252,25 @@ class BannerCell: UICollectionViewCell {
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension UICollectionViewFlowLayout {
+    /// 修正collection布局有缝隙
+    func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
+        let totalSpace = (colCount - 1) * space
+        let itemWidth = (rect.width - totalSpace) / colCount
+        let fixValue = 1 / UIScreen.main.scale
+        var realItemWidth = floor(itemWidth) + fixValue
+        if realItemWidth < itemWidth {
+            realItemWidth += fixValue
+        }
+        let realWidth = colCount * realItemWidth + totalSpace
+        let pointX = (realWidth - rect.width) / 2
+        rect.origin.x = -pointX
+        rect.size.width = realWidth
+        return (rect.width - totalSpace) / colCount
     }
 }

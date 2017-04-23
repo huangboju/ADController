@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         .leftToRight,
         .rightToLeft,
         .overlayVertical,
-        .overlayHorizontal
+        .overlayHorizontal,
     ]
 
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return data.count
     }
 
@@ -51,7 +51,7 @@ extension ViewController: UITableViewDelegate {
         return f.date(from: "2016-10-21 14:45:41")
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = data[indexPath.row].rawValue
     }
 
@@ -63,7 +63,7 @@ extension ViewController: UITableViewDelegate {
         controller.images = (0 ... 9).flatMap { UIImage(named: "IMG_\($0).PNG") }
         controller.isShowPageControl = true
         controller.isAllowLooping = true
-        controller.selectedHandel = { (idx, controller) in
+        controller.selectedHandel = { idx, controller in
             print(idx)
             controller.dismiss(animated: true, completion: nil)
         }

@@ -25,10 +25,10 @@ class OverlayAnimationController: AnimatedTransitioning {
         let duration = transitionDuration(using: transitionContext)
         let isVertical = ADConfig.shared.isVertical
 
-        let completion = { (flag: Bool) in
+        let completion = { (_: Bool) in
             UIView.animate(withDuration: 0.4, animations: {
                 self.imageView.alpha = 0
-            }, completion: { (flag) in
+            }, completion: { _ in
                 self.imageView.removeFromSuperview()
             })
             let isCancelled = transitionContext.transitionWasCancelled
