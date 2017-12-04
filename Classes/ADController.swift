@@ -49,10 +49,9 @@ public class ADController: UIViewController {
 
     private var bundleImage: UIImage? {
         var bundle = Bundle(for: classForCoder)
-        if let resourcePath = bundle.path(forResource: "ADController", ofType: "bundle") {
-            if let resourcesBundle = Bundle(path: resourcePath) {
-                bundle = resourcesBundle
-            }
+        if let resourcePath = bundle.path(forResource: "ADController", ofType: "bundle"),
+           let resourcesBundle = Bundle(path: resourcePath) {
+            bundle = resourcesBundle
         }
         return UIImage(named: "ic_btn_close", in: bundle, compatibleWith: nil)
     }

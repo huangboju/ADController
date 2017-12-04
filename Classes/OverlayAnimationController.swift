@@ -13,7 +13,7 @@ class OverlayAnimationController: AnimatedTransitioning {
     override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
         guard let fromVC = transitionContext.viewController(forKey: .from),
-            let toVC = transitionContext.viewController(forKey: .to) else {
+              let toVC = transitionContext.viewController(forKey: .to) else {
             return
         }
 
