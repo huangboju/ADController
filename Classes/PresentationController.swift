@@ -48,7 +48,7 @@ class PresentationController: UIPresentationController {
         dismissAction()
     }
 
-    func dismissAction() {
+    @objc func dismissAction() {
 
         if let controller = presentedViewController as? ADController {
             if ["overlayVertical", "overlayHorizontal"].contains(ADConfig.shared.transitionType.rawValue) {

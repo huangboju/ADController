@@ -60,7 +60,7 @@ extension ViewController: UITableViewDelegate {
 
         let controller = ADController(type: data[indexPath.row])
         let flag = controller.isCanShowing(date: adDate!)
-        controller.images = (0 ... 9).flatMap { UIImage(named: "IMG_\($0).PNG") }
+        controller.images = (0 ... 9).compactMap { UIImage(named: "IMG_\($0).PNG") }
         controller.isShowPageControl = true
         controller.isAllowLooping = true
         controller.selectedHandel = { idx, controller in
